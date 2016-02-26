@@ -18,6 +18,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
@@ -39,6 +40,7 @@ public:
     QLineEdit *lineEdit;
     QLabel *label_2;
     QLineEdit *lineEdit_2;
+    QPushButton *pushButton;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -113,6 +115,11 @@ public:
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, lineEdit_2);
 
+        pushButton = new QPushButton(formLayoutWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, pushButton);
+
         tabWidget->addTab(tab_connexion, QString());
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
@@ -135,6 +142,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(Module), QApplication::translate("MainWindow", "Modules", 0));
         label->setText(QApplication::translate("MainWindow", "adresse IP", 0));
         label_2->setText(QApplication::translate("MainWindow", "Port", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Valider", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_connexion), QApplication::translate("MainWindow", "Connexion", 0));
     } // retranslateUi
 
