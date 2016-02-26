@@ -29,9 +29,11 @@ void Robot::acquittement_connection()
 }
 void Robot::reception_paquet()
 {
+    cout << "lecture packet" << endl;
     QString ligne;
     while(soc.canReadLine())
     {
         ligne = soc.readLine();     // on lit une ligne
+        cout << ligne.toStdString() << endl;
     }
 }
