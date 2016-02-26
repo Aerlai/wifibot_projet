@@ -426,7 +426,12 @@ release/main.o: ../WifiBot/main.cpp ../WifiBot/mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qeventloop.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.5/mingw492_32/include/QtGui/qinputmethod.h
+		C:/Qt/5.5/mingw492_32/include/QtGui/qinputmethod.h \
+		../WifiBot/robot.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/QTcpSocket \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.5/mingw492_32/include/QtNetwork/qabstractsocket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\WifiBot\main.cpp
 
 release/mainwindow.o: ../WifiBot/mainwindow.cpp ../WifiBot/mainwindow.h \
