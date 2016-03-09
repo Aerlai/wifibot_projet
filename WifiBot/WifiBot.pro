@@ -15,11 +15,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
            mainwindow.cpp\
-           robot.cpp
+           robot.cpp \
+    thread_motorisation.cpp
 
 
 HEADERS  += mainwindow.h\
-            robot.h
+            robot.h \
+    thread_motorisation.h
 
 
 
