@@ -578,6 +578,8 @@ release/mainwindow.o: ../WifiBot/mainwindow.cpp ../WifiBot/mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QLCDNumber \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QLabel \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qlabel.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QLineEdit \
@@ -586,13 +588,32 @@ release/mainwindow.o: ../WifiBot/mainwindow.cpp ../WifiBot/mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qpen.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QListWidget \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qlistwidget.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qlistview.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QOpenGLWidget \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qopenglwidget.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QSurfaceFormat \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qsurfaceformat.h \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qopengl.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/qt_windows.h \
+		C:/Qt/5.5/mingw492_32/include/QtANGLE/GLES3/gl3.h \
+		C:/Qt/5.5/mingw492_32/include/QtANGLE/GLES3/gl3platform.h \
+		C:/Qt/5.5/mingw492_32/include/QtANGLE/KHR/khrplatform.h \
+		C:/Qt/5.5/mingw492_32/include/QtANGLE/GLES2/gl2.h \
+		C:/Qt/5.5/mingw492_32/include/QtANGLE/GLES2/gl2platform.h \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qopengles2ext.h \
+		C:/Qt/5.5/mingw492_32/include/QtGui/qopenglext.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QProgressBar \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/qprogressbar.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QSlider \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QStatusBar \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/QTabWidget \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QTabWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\WifiBot\mainwindow.cpp
 
 release/robot.o: ../WifiBot/robot.cpp ../WifiBot/robot.h \

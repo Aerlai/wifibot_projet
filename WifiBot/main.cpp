@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QThread>
 #include "robot.h"
 #include <iostream>
 
@@ -17,6 +18,9 @@ int main(int argc, char *argv[])
     cout << "socket cree" << endl;
     bot->mise_a_jour_info_connexion("192.168.1.106", 15020);
     bot->connexion();
+    //bot->commande_moteur('K','K');
+    //QThread::msleep(2000);
+    //bot->commande_moteur('@','@');
 
     return a.exec();
 }
