@@ -1,10 +1,11 @@
 #ifndef THREAD_MOTORISATION_H
 #define THREAD_MOTORISATION_H
 
+#include <QThread>
+
 
 class thread_motorisation : public QThread
 {
-    Q_OBJECT
 
 public:
     thread_motorisation();
