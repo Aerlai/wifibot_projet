@@ -293,6 +293,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="text">
+     <string>15020</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
@@ -315,6 +318,9 @@
       <width>251</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>192.168.1.106</string>
     </property>
    </widget>
    <widget class="QProgressBar" name="progressBar_2">
