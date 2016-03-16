@@ -83,3 +83,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.exe
+WifiBot/WifiBot.pro.user
+WifiBot/WifiBot.pro.user
