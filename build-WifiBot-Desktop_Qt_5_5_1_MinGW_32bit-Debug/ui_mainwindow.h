@@ -206,7 +206,7 @@ public:
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), Vitesse_moteur_gauche, SLOT(display(int)));
 =======
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 >>>>>>> refs/remotes/origin/master
 
