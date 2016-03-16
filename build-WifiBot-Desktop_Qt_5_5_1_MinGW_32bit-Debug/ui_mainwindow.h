@@ -202,7 +202,13 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
+<<<<<<< HEAD
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), Vitesse_moteur_gauche, SLOT(display(int)));
+=======
+
+        tabWidget->setCurrentIndex(1);
+
+>>>>>>> refs/remotes/origin/master
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

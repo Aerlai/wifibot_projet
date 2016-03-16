@@ -2,8 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+<<<<<<< HEAD
 #include <QWidget>
 #include <QKeyEvent>
+=======
+#include "thread_motorisation.h"
+>>>>>>> refs/remotes/origin/master
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +27,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    thread_motorisation * thread1;
 };
 
 
