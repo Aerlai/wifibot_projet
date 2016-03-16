@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "thread_motorisation.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    thread_motorisation * thread1;
 };
 
 #endif // MAINWINDOW_H
