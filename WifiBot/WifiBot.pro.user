@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
+<!-- Written by QtCreator 3.6.0, 2016-03-09T17:59:34. -->
+=======
 <!-- Written by QtCreator 3.6.0, 2016-03-10T12:46:32. -->
+>>>>>>> refs/remotes/origin/master
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{8ecf1f80-19eb-422a-9dff-d120be980a0f}</value>
+  <value type="QByteArray">{67d810a2-42ac-43e2-9526-ad0619cb3881}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -283,8 +287,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">WifiBot</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/ant51/Documents/Github/wifibot_projet/WifiBot/WifiBot.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">WifiBot2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/gaudi/Documents/GitHub/wifibot_projet/WifiBot/WifiBot.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">WifiBot.pro</value>

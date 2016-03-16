@@ -223,6 +223,8 @@ debug/moc_mainwindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QKeyEvent \
 		../WifiBot/mainwindow.h
 	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/ant51/Documents/Github/wifibot_projet/WifiBot -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtNetwork -IC:/Qt/5.5/mingw492_32/include/QtTest -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\WifiBot\mainwindow.h -o debug\moc_mainwindow.cpp
 
@@ -296,7 +298,11 @@ debug/moc_robot.cpp: C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qset.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qcontiguouscache.h \
 		../WifiBot/robot.h
+<<<<<<< HEAD
+	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/ant51/Documents/Github/wifibot_projet/WifiBot -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtNetwork -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\WifiBot\robot.h -o debug\moc_robot.cpp
+=======
 	C:\Qt\5.5\mingw492_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -IC:/Users/ant51/Documents/Github/wifibot_projet/WifiBot -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtNetwork -IC:/Qt/5.5/mingw492_32/include/QtTest -IC:/Qt/5.5/mingw492_32/include/QtCore -I. ..\WifiBot\robot.h -o debug\moc_robot.cpp
+>>>>>>> refs/remotes/origin/master
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -424,6 +430,8 @@ debug/main.o: ../WifiBot/main.cpp ../WifiBot/mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QKeyEvent \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QApplication \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/qcoreapplication.h \
@@ -682,6 +690,8 @@ debug/mainwindow.o: ../WifiBot/mainwindow.cpp ../WifiBot/mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
+		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
+		C:/Qt/5.5/mingw492_32/include/QtGui/QKeyEvent \
 		ui_mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QVariant \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QAction \
@@ -735,7 +745,6 @@ debug/mainwindow.o: ../WifiBot/mainwindow.cpp ../WifiBot/mainwindow.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qlistview.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/QOpenGLWidget \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qopenglwidget.h \
-		C:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
 		C:/Qt/5.5/mingw492_32/include/QtGui/QSurfaceFormat \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qsurfaceformat.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qopengl.h \
