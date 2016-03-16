@@ -1,12 +1,15 @@
 #include "robot.h"
 #include <iostream>
+#include "thread_motorisation.h"
+#include <QTest>
 
 using namespace std;
 
 Robot::Robot(QObject *parent) : QObject(parent)
 {
-    QObject::connect(&soc,SIGNAL(connected()),this,SLOT(acquittement_connection()));  // signal émis lors de la connexion au serveur
-    QObject:: connect(&soc, SIGNAL(readyRead()), this, SLOT(reception_paquet()));   // signal émis lorsque des données sont prêtes à être lues
+    soc= new QTcpSocket();
+    QObject::connect(soc,SIGNAL(connected()),this,SLOT(acquittement_connection()));  // signal émis lors de la connexion au serveur
+    QObject:: connect(soc, SIGNAL(readyRead()), this, SLOT(reception_paquet()));   // signal émis lorsque des données sont prêtes à être lues
 }
 
 // Mise a jour des information de connexion
@@ -21,13 +24,15 @@ void Robot::mise_a_jour_info_connexion(QString IP2, int port2)
 void Robot::connexion()
 {
     cout << "connexion au robot" << endl;
-    soc.connectToHost(IP,port);
+    soc->connectToHost(IP,port);
+    bool connecte = soc->waitForConnected(5000);
+    cout << connecte << endl;
 }
 
 // Deconnexion du Robot
 void Robot::deconnexion()
 {
-    soc.close();
+    soc->close();
     cout << "deconnecte du robot" << endl;
 }
 
@@ -36,6 +41,7 @@ void Robot::acquittement_connection()
 {
     emit vers_IHM_acquittement_connection(); // on envoie un signal à l'IHM
     cout << "connexion etablie"<<endl;
+
 }
 
 void Robot::reception_paquet()
@@ -99,12 +105,32 @@ void Robot::commande_moteur(char vitesse_gauche,char vitesse_droite,char flag)
     message.append((char)vitesse_droite);
     message.append((char)0);
     message.append((char)flag);
-    // CRC non utile en TCP
-    message.append((char)0);
-    message.append((char)0);
-
+    // CRC
+    quint16 crc = Crc16( &message, 1); // calcul du crc du package envoyé
+    message.append((char)crc);
+    message.append((char)(crc>>8));
+    cout << "message cree" << endl;
 
     // Envoi du message
-    soc.write(message);
-    soc.flush();
+    if(soc->open(QIODevice::ReadWrite))
+    {
+        soc->write(message);
+        soc->flush();
+    }
+}
+
+quint16 Robot::Crc16(QByteArray* byteArray, int pos){
+    unsigned char *data = (unsigned char* )byteArray->constData();
+    quint16 crc = 0xFFFF;
+    quint16 Polynome = 0xA001;
+    quint16 Parity = 0;
+    for(; pos < byteArray->length(); pos++){
+        crc ^= *(data+pos);
+        for (unsigned int CptBit = 0; CptBit <= 7 ; CptBit++){
+            Parity= crc;
+            crc >>= 1;
+            if (Parity%2 == true) crc ^= Polynome;
+        }
+    }
+    return crc;
 }

@@ -10,16 +10,10 @@ class Robot : public QObject
 public:
     explicit Robot(QObject *parent = 0);
 
-signals:
-    void vers_IHM_acquittement_connection();
-
-public slots:
-    void mise_a_jour_info_connexion(QString IP2, int port2);
     void connexion();
     void deconnexion();
-    void reception_paquet();       // en provenance de la socket, lit la socket, émet un signal vers l'IHM
     void commande_moteur(char vitesse_gauche,char vitesse_droite,char flag);
-
+    quint16 Crc16(QByteArray* byteArray, int pos);
     // Deplacement
     void gauche(float intensite);
     void droite(float intensite);
@@ -31,6 +25,12 @@ public slots:
     void arriere_droite(float intensite);
     void arret();
 
+signals:
+    void vers_IHM_acquittement_connection();
+
+public slots:
+    void mise_a_jour_info_connexion(QString IP2, int port2);
+    void reception_paquet();       // en provenance de la socket, lit la socket, émet un signal vers l'IHM
 
 
 // signaux d'acquittement
@@ -41,7 +41,7 @@ private slots :
 private:    // variable
     QString IP;
     int port;
-    QTcpSocket soc;
+    QTcpSocket * soc;
 };
 
 
