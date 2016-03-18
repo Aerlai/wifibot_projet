@@ -116,6 +116,7 @@ void Robot::commande_moteur(char vitesse_gauche,char vitesse_droite,char flag)
     {
         soc->write(message);
         soc->flush();
+        cout << "message envoye" << endl;
     }
 }
 

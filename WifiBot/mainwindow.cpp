@@ -3,16 +3,16 @@
 #include "Robot.h"
 #include "thread_motorisation.h"
 #include <QTest>
+#include <iostream>
 
-
-
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    thread1 = new thread_motorisation("192.168.1.106", 15020);
+    thread_robot = new thread_motorisation();
 }
 
 MainWindow::~MainWindow()
@@ -21,19 +21,23 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event) {
-
+    //float vit = (ui->vitesse->value())/100;
     switch(event->key()){
     case Qt::Key_Z:
         ui->pushButton_7->animateClick();
+        thread_robot->commande_moteur(1,1.0);
         break;
     case Qt::Key_S:
         ui->pushButton_3->animateClick();
+        thread_robot->commande_moteur(2,1.0);
         break;
     case Qt::Key_Q:
         ui->pushButton_5->animateClick();
+        thread_robot->commande_moteur(3,1.0);
         break;
     case Qt::Key_D:
         ui->pushButton_6->animateClick();
+        thread_robot->commande_moteur(4,1.0);
         break;
     case Qt::Key_K:
         ui->pushButton_10->animateClick();
@@ -50,28 +54,38 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
     case Qt::Key_0:
         ui->pushButton_4->animateClick();
         break;
-
     }
 
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent* event) {
-
+    switch(event->key()){
+    case Qt::Key_Z:
+        thread_robot->commande_moteur(0,0.0);
+        break;
+    case Qt::Key_S:
+        thread_robot->commande_moteur(0,0.0);
+        break;
+    case Qt::Key_Q:
+        thread_robot->commande_moteur(0,0.0);
+        break;
+    case Qt::Key_D:
+        thread_robot->commande_moteur(0,0.0);
+        break;
+    case Qt::Key_0:
+        thread_robot->commande_moteur(0,0.0);
+        break;
+    }
 }
 
-void MainWindow::on_pushButton_clicked()
+// Bouton connexion
+void MainWindow::on_pushButton_connexion_clicked()
 {
-    // test du socket
-    //thread1->start();
+    thread_robot->mise_a_jour_info_connexion("192.168.1.106", 15020);
+    thread_robot->start(); // lancement du thread
+}
 
-    Robot * bot = new Robot();
-    bot->mise_a_jour_info_connexion("192.168.1.106", 15020);
-    bot->connexion();
-    for(int i = 0; i <100;i++)
-    {
-        bot->avant(1.0);
-        QTest::qWait(25);
-    }
-
-
+void MainWindow::on_pushButton_deconnexion_clicked()
+{
+    thread_robot->stop();
 }

@@ -20,12 +20,16 @@ public:
     void keyPressEvent(QKeyEvent* event);
     void keyReleaseEvent(QKeyEvent* event);
 
+    Robot * bot;
+
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButton_connexion_clicked();
+
+    void on_pushButton_deconnexion_clicked();
 
 private:
     Ui::MainWindow *ui;
-    thread_motorisation * thread1;
+    thread_motorisation * thread_robot;
 };
 
 #endif // MAINWINDOW_H
