@@ -10,6 +10,8 @@ Robot::Robot(QObject *parent) : QObject(parent)
     soc= new QTcpSocket();
     QObject::connect(soc,SIGNAL(connected()),this,SLOT(acquittement_connection()));  // signal émis lors de la connexion au serveur
     QObject:: connect(soc, SIGNAL(readyRead()), this, SLOT(reception_paquet()));   // signal émis lorsque des données sont prêtes à être lues
+    calibrage = 0.40;
+    calibrage2 = 1.5;
 }
 
 // Mise a jour des information de connexion
@@ -65,13 +67,23 @@ void Robot::avant(float intensite)
 }
 void Robot::avant_gauche(float intensite)
 {
-    float calibrage = 0.70;
-    commande_moteur(240*intensite*calibrage,240*intensite,80);
+    int vitesse1 = 240*intensite*calibrage;
+    if(vitesse1 >240)
+        vitesse1 = 240;
+    int vitesse2 = 240*intensite*calibrage2;
+    if(vitesse2>240)
+        vitesse2 = 240;
+    commande_moteur(vitesse1,vitesse2,80);
 }
 void Robot::avant_droite(float intensite)
 {
-    float calibrage = 0.70;
-    commande_moteur(240*intensite,240*intensite*calibrage,80);
+    int vitesse1 = 240*intensite*calibrage2;
+    if(vitesse1 >240)
+        vitesse1 = 240;
+    int vitesse2 = 240*intensite*calibrage;
+    if(vitesse2>240)
+        vitesse2 = 240;
+    commande_moteur(vitesse1,vitesse2,80);
 }
 void Robot::arriere(float intensite)
 {
@@ -79,13 +91,23 @@ void Robot::arriere(float intensite)
 }
 void Robot::arriere_gauche(float intensite)
 {
-    float calibrage = 0.70;
-    commande_moteur(240*intensite*calibrage,240*intensite,0);
+    int vitesse1 = 240*intensite*calibrage;
+    if(vitesse1 >240)
+        vitesse1 = 240;
+    int vitesse2 = 240*intensite*calibrage2;
+    if(vitesse2>240)
+        vitesse2 = 240;
+    commande_moteur(vitesse1,vitesse2,0);
 }
 void Robot::arriere_droite(float intensite)
 {
-    float calibrage = 0.70;
-    commande_moteur(240*intensite,240*intensite*calibrage,0);
+    int vitesse1 = 240*intensite*calibrage2;
+    if(vitesse1 >240)
+        vitesse1 = 240;
+    int vitesse2 = 240*intensite*calibrage;
+    if(vitesse2>240)
+        vitesse2 = 240;
+    commande_moteur(vitesse1,vitesse2,0);
 }
 void Robot::arret()
 {
@@ -109,14 +131,14 @@ void Robot::commande_moteur(char vitesse_gauche,char vitesse_droite,char flag)
     quint16 crc = Crc16( &message, 1); // calcul du crc du package envoyé
     message.append((char)crc);
     message.append((char)(crc>>8));
-    cout << "message cree" << endl;
+//    cout << "message cree" << endl;
 
     // Envoi du message
     if(soc->open(QIODevice::ReadWrite))
     {
         soc->write(message);
         soc->flush();
-        cout << "message envoye" << endl;
+//        cout << "message envoye" << endl;
     }
 }
 

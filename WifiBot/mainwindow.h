@@ -27,9 +27,43 @@ private slots:
 
     void on_pushButton_deconnexion_clicked();
 
+    void on_pushButton_7_pressed();
+
+    void on_pushButton_7_released();
+
+    void on_pushButton_3_pressed();
+
+    void on_pushButton_3_released();
+
+    void on_pushButton_6_pressed();
+
+    void on_pushButton_6_released();
+
+    void on_pushButton_5_pressed();
+
+    void on_pushButton_5_released();
+
+    void on_bouton_AvantGauche_pressed();
+
+    void on_bouton_AvantDroit_pressed();
+
+    void on_bouton_ArriereGauche_pressed();
+
+    void on_bouton_ArriereDroit_pressed();
+
+    void on_bouton_AvantGauche_released();
+
+    void on_bouton_AvantDroit_released();
+
+    void on_bouton_ArriereGauche_released();
+
+    void on_bouton_ArriereDroit_released();
+
 private:
     Ui::MainWindow *ui;
     thread_motorisation * thread_robot;
+    bool key_pressed_z,key_pressed_q,key_pressed_s,key_pressed_d;
+    void commande_robot();
 };
 
 #endif // MAINWINDOW_H

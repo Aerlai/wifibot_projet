@@ -42,6 +42,8 @@ private:    // variable
     QString IP;
     int port;
     QTcpSocket * soc;
+    float calibrage;
+    float calibrage2;
 };
 
 
