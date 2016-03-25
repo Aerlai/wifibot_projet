@@ -99,16 +99,6 @@
    <string>WifiBot</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QOpenGLWidget" name="Affichage_camera">
-    <property name="geometry">
-     <rect>
-      <x>79</x>
-      <y>10</y>
-      <width>531</width>
-      <height>331</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
@@ -492,7 +482,6 @@
    </widget>
    <zorder>listWidget_2</zorder>
    <zorder>listWidget_3</zorder>
-   <zorder>Affichage_camera</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton_7</zorder>
    <zorder>Vitesse_moteur_gauche</zorder>
