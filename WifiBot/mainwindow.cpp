@@ -4,6 +4,7 @@
 #include "thread_motorisation.h"
 #include <QTest>
 #include <iostream>
+#include <QtNetwork>
 
 using namespace std;
 
@@ -13,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     thread_robot = new thread_motorisation();
+    camera = new QNetworkAccessManager(this);
     key_pressed_z = false;
     key_pressed_q = false;
     key_pressed_s = false;
@@ -48,16 +50,16 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
         key_pressed_d = true;
         break;
     case Qt::Key_K:
-        ui->pushButton_10->animateClick();
+        ui->cameraBas->animateClick();
         break;
     case Qt::Key_J:
-        ui->pushButton_12->animateClick();
+        ui->cameraGauche->animateClick();
         break;
     case Qt::Key_L:
-        ui->pushButton_8->animateClick();
+        ui->cameraDroite->animateClick();
         break;
     case Qt::Key_I:
-        ui->pushButton_9->animateClick();
+        ui->cameraHaut->animateClick();
         break;
     case Qt::Key_F:
         thread_robot->commande_moteur(0,0.0);
@@ -153,7 +155,6 @@ void MainWindow::on_pushButton_connexion_clicked()
     thread_robot->mise_a_jour_info_connexion(ui->champ_ip->text(), ui->champ_port->text().toInt());
     thread_robot->start(); // lancement du thread
 }
-
 void MainWindow::on_pushButton_deconnexion_clicked()
 {
     thread_robot->stop();
@@ -247,4 +248,30 @@ void MainWindow::on_bouton_ArriereGauche_released()
 void MainWindow::on_bouton_ArriereDroit_released()
 {
     thread_robot->commande_moteur(0,0.0);
+}
+
+void MainWindow::resetCam()
+{
+    QUrl url("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094855&group=1&value=1");
+    camera->get(QNetworkRequest(url));
+    QUrl url2("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094854&group=1&value=1");
+    camera->get(QNetworkRequest(url2));
+    ;
+}
+
+void MainWindow::on_reset_camera_clicked()
+{
+    resetCam();
+}
+
+void MainWindow::on_cameraHaut_pressed()
+{
+//    QUrl url("http://192.168.1.106:8080"+cameraup);
+//    camera->get(QNetworkRequest(url));
+}
+
+void MainWindow::on_cameraBas_pressed()
+{
+//    QUrl url("http://192.168.1.106:8080"+cameraup);
+//    camera->get(QNetworkRequest(url));
 }

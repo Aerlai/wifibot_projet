@@ -5,6 +5,7 @@
 #include "thread_motorisation.h"
 #include <QWidget>
 #include <QKeyEvent>
+#include <QNetworkAccessManager>
 
 namespace Ui {
 class MainWindow;
@@ -59,11 +60,19 @@ private slots:
 
     void on_bouton_ArriereDroit_released();
 
+    void on_reset_camera_clicked();
+
+    void on_cameraHaut_pressed();
+
+    void on_cameraBas_pressed();
+
 private:
     Ui::MainWindow *ui;
     thread_motorisation * thread_robot;
     bool key_pressed_z,key_pressed_q,key_pressed_s,key_pressed_d;
     void commande_robot();
+    void resetCam();
+    QNetworkAccessManager * camera;
 };
 
 #endif // MAINWINDOW_H

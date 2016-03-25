@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>689</width>
+    <width>611</width>
     <height>694</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>689</width>
+    <width>611</width>
     <height>600</height>
    </size>
   </property>
@@ -102,7 +102,7 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>500</y>
       <width>41</width>
       <height>31</height>
@@ -115,7 +115,7 @@
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>470</y>
       <width>41</width>
       <height>31</height>
@@ -128,9 +128,9 @@
    <widget class="QLCDNumber" name="Vitesse_moteur_gauche">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>270</x>
       <y>580</y>
-      <width>64</width>
+      <width>71</width>
       <height>23</height>
      </rect>
     </property>
@@ -141,8 +141,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>530</y>
+      <x>140</x>
+      <y>500</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -154,20 +154,20 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>500</y>
-      <width>41</width>
+      <x>100</x>
+      <y>540</y>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>F</string>
+     <string>Arret Urgence (F)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>100</x>
       <y>430</y>
       <width>121</width>
       <height>21</height>
@@ -183,7 +183,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>260</x>
       <y>400</y>
       <width>91</width>
       <height>16</height>
@@ -196,7 +196,7 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>500</y>
       <width>41</width>
       <height>31</height>
@@ -209,8 +209,8 @@
    <widget class="QSlider" name="vitesse">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>440</y>
+      <x>300</x>
+      <y>430</y>
       <width>21</width>
       <height>121</height>
      </rect>
@@ -225,20 +225,10 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>400</y>
-      <width>191</width>
-      <height>201</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_connexion">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>450</x>
       <y>620</y>
       <width>75</width>
       <height>23</height>
@@ -285,7 +275,7 @@
      <rect>
       <x>161</x>
       <y>645</y>
-      <width>251</width>
+      <width>271</width>
       <height>20</height>
      </rect>
     </property>
@@ -296,7 +286,7 @@
    <widget class="QPushButton" name="pushButton_deconnexion">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>450</x>
       <y>650</y>
       <width>75</width>
       <height>23</height>
@@ -311,7 +301,7 @@
      <rect>
       <x>160</x>
       <y>620</y>
-      <width>251</width>
+      <width>271</width>
       <height>20</height>
      </rect>
     </property>
@@ -324,7 +314,7 @@
      <rect>
       <x>77</x>
       <y>360</y>
-      <width>571</width>
+      <width>491</width>
       <height>23</height>
      </rect>
     </property>
@@ -338,10 +328,10 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_12">
+   <widget class="QPushButton" name="cameraGauche">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>390</x>
       <y>500</y>
       <width>41</width>
       <height>31</height>
@@ -351,10 +341,10 @@
      <string>J</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="cameraDroite">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>470</x>
       <y>500</y>
       <width>41</width>
       <height>31</height>
@@ -367,9 +357,9 @@
    <widget class="QListWidget" name="listWidget_2">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>370</x>
       <y>400</y>
-      <width>191</width>
+      <width>161</width>
       <height>201</height>
      </rect>
     </property>
@@ -377,9 +367,9 @@
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>380</x>
       <y>430</y>
-      <width>131</width>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
@@ -390,10 +380,10 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Contrôle de la caméra&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="cameraHaut">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>430</x>
       <y>470</y>
       <width>41</width>
       <height>31</height>
@@ -403,11 +393,11 @@
      <string>I</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="cameraBas">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>530</y>
+      <x>430</x>
+      <y>500</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -422,7 +412,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>470</y>
       <width>41</width>
       <height>31</height>
@@ -438,7 +428,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>530</y>
       <width>41</width>
       <height>31</height>
@@ -454,7 +444,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>470</y>
       <width>41</width>
       <height>31</height>
@@ -470,7 +460,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>530</y>
       <width>41</width>
       <height>31</height>
@@ -480,8 +470,49 @@
      <string>SQ</string>
     </property>
    </widget>
+   <widget class="QWebView" name="webView">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>451</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="url">
+     <url>
+      <string>http://192.168.1.106:8080/javascript_simple.html</string>
+     </url>
+    </property>
+    <property name="zoomFactor">
+     <double>1.330000042915344</double>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>400</y>
+      <width>161</width>
+      <height>201</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_camera">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>540</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N(resetcamera)</string>
+    </property>
+   </widget>
+   <zorder>listWidget_4</zorder>
    <zorder>listWidget_2</zorder>
-   <zorder>listWidget_3</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton_7</zorder>
    <zorder>Vitesse_moteur_gauche</zorder>
@@ -498,15 +529,17 @@
    <zorder>pushButton_deconnexion</zorder>
    <zorder>champ_ip</zorder>
    <zorder>progressBar_2</zorder>
-   <zorder>pushButton_12</zorder>
-   <zorder>pushButton_8</zorder>
+   <zorder>cameraGauche</zorder>
+   <zorder>cameraDroite</zorder>
    <zorder>label_8</zorder>
-   <zorder>pushButton_9</zorder>
-   <zorder>pushButton_10</zorder>
+   <zorder>cameraHaut</zorder>
+   <zorder>cameraBas</zorder>
    <zorder>bouton_AvantDroit</zorder>
    <zorder>bouton_ArriereDroit</zorder>
    <zorder>bouton_AvantGauche</zorder>
    <zorder>bouton_ArriereGauche</zorder>
+   <zorder>webView</zorder>
+   <zorder>reset_camera</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionConnection">
@@ -521,6 +554,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
