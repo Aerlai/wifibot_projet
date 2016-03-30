@@ -66,6 +66,10 @@ private slots:
 
     void on_cameraBas_pressed();
 
+    void on_cameraGauche_pressed();
+
+    void on_cameraDroite_pressed();
+
 private:
     Ui::MainWindow *ui;
     thread_motorisation * thread_robot;

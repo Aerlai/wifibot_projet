@@ -154,10 +154,12 @@ void MainWindow::on_pushButton_connexion_clicked()
 {
     thread_robot->mise_a_jour_info_connexion(ui->champ_ip->text(), ui->champ_port->text().toInt());
     thread_robot->start(); // lancement du thread
+    ui->webView->setUrl(QUrl("http://192.168.1.106:8080/javascript_simple.html"));
 }
 void MainWindow::on_pushButton_deconnexion_clicked()
 {
     thread_robot->stop();
+    ui->webView->setUrl(QUrl("about:blank"));
 }
 
 
@@ -266,12 +268,25 @@ void MainWindow::on_reset_camera_clicked()
 
 void MainWindow::on_cameraHaut_pressed()
 {
-//    QUrl url("http://192.168.1.106:8080"+cameraup);
-//    camera->get(QNetworkRequest(url));
+    QUrl url("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200");
+    camera->get(QNetworkRequest(url));
 }
 
 void MainWindow::on_cameraBas_pressed()
 {
-//    QUrl url("http://192.168.1.106:8080"+cameraup);
-//    camera->get(QNetworkRequest(url));
+
+    QUrl url("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200");
+    camera->get(QNetworkRequest(url));
+}
+
+void MainWindow::on_cameraGauche_pressed()
+{
+    QUrl url("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200");
+    camera->get(QNetworkRequest(url));
+}
+
+void MainWindow::on_cameraDroite_pressed()
+{
+    QUrl url("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200");
+    camera->get(QNetworkRequest(url));
 }

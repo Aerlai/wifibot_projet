@@ -481,7 +481,7 @@
     </property>
     <property name="url">
      <url>
-      <string>http://192.168.1.106:8080/javascript_simple.html</string>
+      <string>about:blank</string>
      </url>
     </property>
     <property name="zoomFactor">

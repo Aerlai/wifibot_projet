@@ -35,7 +35,7 @@ void thread_motorisation::run()
             bot->arriere_droite(intensite);
         else if (moteur == 8)
             bot->arriere_gauche(intensite);
-        QTest::qSleep(25);
+        QTest::qSleep(40);
     }
     bot->deconnexion();
 }
