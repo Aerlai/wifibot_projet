@@ -12,6 +12,7 @@ class thread_motorisation : public QThread
 public:
      thread_motorisation();
      Robot * bot;
+     QByteArray buffer;
 protected:
      void run();
 private:
@@ -25,6 +26,7 @@ public slots:
     void mise_a_jour_info_connexion(QString IP2, int port2);
     void commande_moteur(int , float);
     void stop();
+    QByteArray recevoir();
 
 };
 

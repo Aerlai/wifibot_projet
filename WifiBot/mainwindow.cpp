@@ -155,6 +155,7 @@ void MainWindow::on_pushButton_connexion_clicked()
     thread_robot->mise_a_jour_info_connexion(ui->champ_ip->text(), ui->champ_port->text().toInt());
     thread_robot->start(); // lancement du thread
     ui->webView->setUrl(QUrl("http://192.168.1.106:8080/javascript_simple.html"));
+    //qDebug() << thread_robot->recevoir() << endl;
 }
 void MainWindow::on_pushButton_deconnexion_clicked()
 {

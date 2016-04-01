@@ -35,7 +35,9 @@ void thread_motorisation::run()
             bot->arriere_droite(intensite);
         else if (moteur == 8)
             bot->arriere_gauche(intensite);
-        QTest::qSleep(40);
+        buffer = bot->recevoir();
+        qDebug() << buffer << endl;
+        QTest::qSleep(35);
     }
     bot->deconnexion();
 }
@@ -55,4 +57,9 @@ void thread_motorisation::commande_moteur(int moteur2, float intensite2)
 void thread_motorisation::stop()
 {
     marche = false;
+}
+
+QByteArray thread_motorisation::recevoir()
+{
+    return buffer;
 }

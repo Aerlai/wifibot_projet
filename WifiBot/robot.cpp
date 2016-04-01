@@ -131,14 +131,14 @@ void Robot::commande_moteur(char vitesse_gauche,char vitesse_droite,char flag)
     quint16 crc = Crc16( &message, 1); // calcul du crc du package envoyé
     message.append((char)crc);
     message.append((char)(crc>>8));
-//    cout << "message cree" << endl;
+    //    cout << "message cree" << endl;
 
     // Envoi du message
     if(soc->open(QIODevice::ReadWrite))
     {
         soc->write(message);
         soc->flush();
-//        cout << "message envoye" << endl;
+        //        cout << "message envoye" << endl;
     }
 }
 
@@ -157,3 +157,18 @@ quint16 Robot::Crc16(QByteArray* byteArray, int pos){
     }
     return crc;
 }
+
+QByteArray Robot::recevoir()
+{
+    if(soc->open(QIODevice::ReadWrite))
+    {
+        soc->waitForReadyRead(100);
+        if(soc->bytesAvailable()>=21)
+        {
+            buffer = soc->read(21);
+        }
+        //qDebug()<< buffer << endl;
+    }
+    return buffer;
+}
+

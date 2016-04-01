@@ -24,6 +24,7 @@ public:
     void arriere_gauche(float intensite);
     void arriere_droite(float intensite);
     void arret();
+    QByteArray recevoir();
 
 signals:
     void vers_IHM_acquittement_connection();
@@ -44,6 +45,7 @@ private:    // variable
     QTcpSocket * soc;
     float calibrage;
     float calibrage2;
+    QByteArray buffer;
 };
 
 
