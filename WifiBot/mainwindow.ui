@@ -309,17 +309,20 @@
      <string>192.168.1.106</string>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar_2">
+   <widget class="QProgressBar" name="batlevel">
     <property name="geometry">
      <rect>
       <x>77</x>
       <y>360</y>
       <width>491</width>
-      <height>23</height>
+      <height>31</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>126</number>
+    </property>
     <property name="value">
-     <number>50</number>
+     <number>0</number>
     </property>
     <property name="invertedAppearance">
      <bool>false</bool>
@@ -511,6 +514,22 @@
      <string>N(resetcamera)</string>
     </property>
    </widget>
+   <widget class="QLabel" name="valeurBat">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>370</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Non connecté</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <zorder>listWidget_4</zorder>
    <zorder>listWidget_2</zorder>
    <zorder>pushButton_6</zorder>
@@ -528,7 +547,7 @@
    <zorder>champ_port</zorder>
    <zorder>pushButton_deconnexion</zorder>
    <zorder>champ_ip</zorder>
-   <zorder>progressBar_2</zorder>
+   <zorder>batlevel</zorder>
    <zorder>cameraGauche</zorder>
    <zorder>cameraDroite</zorder>
    <zorder>label_8</zorder>
@@ -540,6 +559,7 @@
    <zorder>bouton_ArriereGauche</zorder>
    <zorder>webView</zorder>
    <zorder>reset_camera</zorder>
+   <zorder>valeurBat</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionConnection">

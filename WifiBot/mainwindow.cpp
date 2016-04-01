@@ -5,6 +5,8 @@
 #include <QTest>
 #include <iostream>
 #include <QtNetwork>
+#include <QTimer>
+#include <sstream>
 
 using namespace std;
 
@@ -23,6 +25,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->bouton_AvantDroit->hide();
     ui->bouton_ArriereGauche->hide();
     ui->bouton_ArriereDroit->hide();
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(donnee_chassis()));
+    timer->setInterval(2000);
 }
 
 MainWindow::~MainWindow()
@@ -155,12 +161,15 @@ void MainWindow::on_pushButton_connexion_clicked()
     thread_robot->mise_a_jour_info_connexion(ui->champ_ip->text(), ui->champ_port->text().toInt());
     thread_robot->start(); // lancement du thread
     ui->webView->setUrl(QUrl("http://192.168.1.106:8080/javascript_simple.html"));
-    //qDebug() << thread_robot->recevoir() << endl;
+    timer->start();
 }
 void MainWindow::on_pushButton_deconnexion_clicked()
 {
     thread_robot->stop();
     ui->webView->setUrl(QUrl("about:blank"));
+    timer->stop();
+    ui->batlevel->setValue(0);
+    ui->valeurBat->setText("Non connecté");
 }
 
 
@@ -290,4 +299,21 @@ void MainWindow::on_cameraDroite_pressed()
 {
     QUrl url("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200");
     camera->get(QNetworkRequest(url));
+}
+
+void MainWindow::donnee_chassis()
+{
+    QByteArray buffer = thread_robot->recevoir();
+    int valeur = buffer.at(2);
+    if(valeur<=126)
+    {
+        ui->batlevel->setValue(valeur);
+        ui->valeurBat->setText("Connecté");
+    }
+    else
+    {
+        ui->batlevel->setValue(126);
+        ui->valeurBat->setText("En Charge");
+    }
+
 }
