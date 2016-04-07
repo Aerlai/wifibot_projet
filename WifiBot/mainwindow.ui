@@ -530,6 +530,82 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QProgressBar" name="pAvantGauche">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="pAvantDroite">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>10</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="pArriereDroite">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>330</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="pArriereGauche">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>330</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+   </widget>
    <zorder>listWidget_4</zorder>
    <zorder>listWidget_2</zorder>
    <zorder>pushButton_6</zorder>
@@ -560,6 +636,10 @@
    <zorder>webView</zorder>
    <zorder>reset_camera</zorder>
    <zorder>valeurBat</zorder>
+   <zorder>pAvantGauche</zorder>
+   <zorder>pAvantDroite</zorder>
+   <zorder>pArriereDroite</zorder>
+   <zorder>pArriereGauche</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionConnection">

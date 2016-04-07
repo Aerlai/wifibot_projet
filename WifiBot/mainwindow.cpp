@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(donnee_chassis()));
-    timer->setInterval(2000);
+    timer->setInterval(100);
 }
 
 MainWindow::~MainWindow()
@@ -315,5 +315,8 @@ void MainWindow::donnee_chassis()
         ui->batlevel->setValue(126);
         ui->valeurBat->setText("En Charge");
     }
-
+    ui->pAvantGauche->setValue(buffer.at(3));
+    ui->pAvantDroite->setValue(buffer.at(11));
+    ui->pArriereDroite->setValue(buffer.at(4));
+    ui->pArriereGauche->setValue(buffer.at(12));
 }
