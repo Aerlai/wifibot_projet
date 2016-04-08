@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(donnee_chassis()));
-    timer->setInterval(100);
+    timer->setInterval(50);
 }
 
 MainWindow::~MainWindow()
@@ -40,19 +40,15 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
     //float vit = (ui->vitesse->value())/100;
     switch(event->key()){
     case Qt::Key_Z:
-//        ui->pushButton_7->animateClick();
         key_pressed_z=true;
         break;
     case Qt::Key_S:
-//        ui->pushButton_3->animateClick();
         key_pressed_s = true;
         break;
     case Qt::Key_Q:
-//        ui->pushButton_5->animateClick();
         key_pressed_q = true;
         break;
     case Qt::Key_D:
-//        ui->pushButton_6->animateClick();
         key_pressed_d = true;
         break;
     case Qt::Key_K:
@@ -68,7 +64,13 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
         ui->cameraHaut->animateClick();
         break;
     case Qt::Key_F:
-        thread_robot->commande_moteur(0,0.0);
+        key_pressed_z=true;
+        key_pressed_q=true;
+        key_pressed_s=true;
+        key_pressed_d=true;
+        break;
+    case Qt::Key_N:
+        on_reset_camera_clicked();
         break;
     }
     commande_robot();

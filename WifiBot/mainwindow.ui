@@ -484,7 +484,7 @@
     </property>
     <property name="url">
      <url>
-      <string>about:blank</string>
+      <string>file:///C:/Users/ant51/Documents/Github/wifibot_projet/WifiBot/pasimage.png</string>
      </url>
     </property>
     <property name="zoomFactor">
